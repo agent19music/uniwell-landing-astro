@@ -1,0 +1,23 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import Device from "../appdrop/Device.astro";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_features" }>>;
+const { value } = Astro.props;
+const groups = [value.features.slice(0,3),value.features.slice(3)];
+---
+<section id={value.anchor_id || "features"} class="ad-features">
+ <div class="ad-features-container">
+  <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/>
+  <div class="ad-feature-layout">
+   <div class="ad-feature-group ad-feature-group-left">{groups[0].map(feature => <article class="ad-feature-card" data-reveal>
+    {feature.icon_image && <Image image={feature.icon_image} class="ad-feature-icon" alt=""/>}<div><h3>{feature.title}</h3><p>{feature.description}</p></div>
+   </article>)}</div>
+   <div class="ad-feature-device" data-reveal><Device image={value.image}/></div>
+   <div class="ad-feature-group ad-feature-group-right">{groups[1].map(feature => <article class="ad-feature-card" data-reveal>
+    {feature.icon_image && <Image image={feature.icon_image} class="ad-feature-icon" alt=""/>}<div><h3>{feature.title}</h3><p>{feature.description}</p></div>
+   </article>)}</div>
+  </div>
+ </div>
+</section>

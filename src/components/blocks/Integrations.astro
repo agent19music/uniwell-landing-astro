@@ -1,0 +1,36 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_integrations" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "connect"} class="ad-integrations"><div class="ad-container ad-integrations-container">
+ <div class="ad-integration-orbit" aria-hidden="true"><div class="ad-orbit-inner"></div>{value.integrations?.map((integration,index) => <div class={`ad-orbit-icon ad-orbit-icon-${index+1}`}><Image image={integration.logo} alt=""/></div>)}</div>
+ <div class="ad-integration-copy"><SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/><p>{value.subheadline}</p></div>
+ <span class="ad-visually-hidden">{value.integrations?.map(item=>item.name).join(", ")}</span>
+</div></section>
+<script>
+ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  document.querySelectorAll<HTMLElement>(".ad-integrations-container").forEach(section => {
+   const orbit=section.querySelector<HTMLElement>(".ad-integration-orbit");
+   if(!orbit)return;
+   let active=false,queued=false;
+   const update=()=>{
+    queued=false;
+    const bounds=section.getBoundingClientRect();
+    const progress=Math.max(0,Math.min(1,(innerHeight-bounds.top)/(innerHeight+bounds.height)));
+    orbit.style.rotate=`${-16+36*progress}deg`;
+   };
+   const schedule=()=>{if(active&&!queued){queued=true;requestAnimationFrame(update);}};
+   const observer=new IntersectionObserver(entries=>{
+    active=entries[0].isIntersecting;
+    orbit.querySelectorAll<HTMLElement>(".ad-orbit-icon").forEach(icon=>icon.style.animationPlayState=active?"running":"paused");
+    if(active)update();
+   });
+   observer.observe(section);
+   addEventListener("scroll",schedule,{passive:true});
+   addEventListener("resize",schedule,{passive:true});
+  });
+ }
+</script>

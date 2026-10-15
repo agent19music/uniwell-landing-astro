@@ -1,0 +1,13 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_intelligence" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "intelligence"} class="ad-intelligence"><div class="ad-container ad-intelligence-container">
+ <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/>
+ <div class="ad-intelligence-grid">{value.cards?.map(card => <article class="ad-intelligence-card" data-reveal>
+  <Image image={card.image} class="ad-intelligence-image"/><div><h3>{card.title}</h3><p>{card.description}</p></div>
+ </article>)}</div>
+</div></section>

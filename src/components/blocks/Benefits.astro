@@ -1,0 +1,17 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import Device from "../appdrop/Device.astro";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_benefits" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "benefits"} class="ad-benefits">
+ <div class="ad-container ad-benefits-container">
+  <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline} />
+  <div class="ad-benefit-grid">{value.cards?.map((card,index) => <article class:list={["ad-benefit-card", {"ad-benefit-card-reverse": index === 1}]} data-reveal>
+   <div class="ad-benefit-copy"><h3>{card.title}</h3><p>{card.description}</p></div>
+   <div class="ad-benefit-screen"><Device image={card.image} radius={44}/></div>
+  </article>)}</div>
+ </div>
+</section>

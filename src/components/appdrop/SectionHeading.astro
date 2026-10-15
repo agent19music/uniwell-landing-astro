@@ -1,0 +1,13 @@
+---
+interface Props {
+	eyebrow?: string | null;
+	lead?: string | null;
+	headline?: string | null;
+	class?: string;
+}
+const { eyebrow, lead, headline, class: className } = Astro.props;
+---
+<header class:list={["ad-heading", className]}>
+	{eyebrow && <p class="ad-eyebrow">{eyebrow}</p>}
+	{(lead || headline) && <h2 data-reveal><span class="ad-muted">{lead}</span>{headline}</h2>}
+</header>

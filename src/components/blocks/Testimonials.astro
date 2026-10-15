@@ -1,0 +1,25 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_testimonials" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "reviews"} class="ad-reviews"><div class="ad-container ad-reviews-container">
+ <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/>
+ <div class="ad-review-slider" data-review-slider aria-roledescription="carousel" aria-label="Customer reviews">
+  <div class="ad-review-stack">{value.testimonials.map((testimonial,index) => <figure class="ad-review-card" data-review hidden={index>0} aria-roledescription="slide" aria-label={`${index+1} of ${value.testimonials.length}`}>
+   <img src="/appdrop/cQZaw5KwB.svg" class="ad-review-mask ad-review-mask-bottom" alt=""/><img src="/appdrop/CNGZlhlmV.svg" class="ad-review-mask ad-review-mask-top" alt=""/>
+   <blockquote>{testimonial.quote}</blockquote><figcaption>{testimonial.avatar && <Image image={testimonial.avatar} class="ad-review-avatar" alt=""/>}<span><strong>{testimonial.author}</strong><small>{testimonial.role}</small></span></figcaption>
+  </figure>)}</div>
+  <div class="ad-review-controls"><button type="button" data-review-prev aria-label="Previous review"><img src="/appdrop/ZVlaWnUs6.svg" width="6" height="11" alt=""/></button><button type="button" data-review-next aria-label="Next review"><img src="/appdrop/TcGbd4z3J.svg" width="6" height="11" alt=""/></button></div>
+  <p class="ad-visually-hidden" data-review-status aria-live="polite"></p>
+ </div>
+</div></section>
+<script>
+ document.querySelectorAll<HTMLElement>("[data-review-slider]").forEach(slider => {
+  const slides=Array.from(slider.querySelectorAll<HTMLElement>("[data-review]"));let current=0;
+  function move(direction:number){if(!slides.length)return;slides[current].hidden=true;current=(current+direction+slides.length)%slides.length;slides[current].hidden=false;const status=slider.querySelector("[data-review-status]");if(status)status.textContent=`Review ${current+1} of ${slides.length}`;}
+  slider.querySelector("[data-review-prev]")?.addEventListener("click",()=>move(-1));slider.querySelector("[data-review-next]")?.addEventListener("click",()=>move(1));
+ });
+</script>

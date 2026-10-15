@@ -1,0 +1,9 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_statement" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "challenge"} class="ad-statement">
+ <div class="ad-statement-container"><p class="ad-eyebrow">{value.eyebrow}</p><h2 data-reveal><span class="ad-muted">{value.headline_lead}</span>{value.headline}</h2>{value.body && <p class="ad-muted">{value.body}</p>}</div>
+</section>

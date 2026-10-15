@@ -1,0 +1,35 @@
+---
+import { Blocks, defineBlockComponents } from "emdash/ui";
+import type { PageContentBlock } from "../../emdash-env";
+import Benefits from "./blocks/Benefits.astro";
+import Intelligence from "./blocks/Intelligence.astro";
+import FAQ from "./blocks/FAQ.astro";
+import Features from "./blocks/Features.astro";
+import Hero from "./blocks/Hero.astro";
+import Download from "./blocks/Download.astro";
+import Integrations from "./blocks/Integrations.astro";
+import Pricing from "./blocks/Pricing.astro";
+import Statement from "./blocks/Statement.astro";
+import Testimonials from "./blocks/Testimonials.astro";
+
+interface Props {
+	value?: PageContentBlock[] | null;
+}
+
+const { value } = Astro.props;
+
+const marketingComponents = defineBlockComponents<PageContentBlock>({
+	marketing_hero: Hero,
+	marketing_benefits: Benefits,
+	marketing_intelligence: Intelligence,
+	marketing_statement: Statement,
+	marketing_features: Features,
+	marketing_integrations: Integrations,
+	marketing_download: Download,
+	marketing_testimonials: Testimonials,
+	marketing_pricing: Pricing,
+	marketing_faq: FAQ,
+});
+---
+
+<Blocks {value} components={marketingComponents} />

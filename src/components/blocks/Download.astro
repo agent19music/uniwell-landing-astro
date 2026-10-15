@@ -1,0 +1,13 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+import StoreButtons from "../appdrop/StoreButtons.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_download" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "download"} class="ad-download"><div class="ad-container ad-download-container">
+ <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/>
+ <ol class="ad-step-grid">{value.steps?.map(step=><li class="ad-step-card" data-reveal>{step.icon_image && <Image image={step.icon_image} class="ad-step-icon" alt=""/>}<div><h3>{step.title}</h3><p>{step.description}</p></div></li>)}</ol>
+ <StoreButtons primaryUrl={value.primary_cta_url} secondaryUrl={value.secondary_cta_url} primaryLabel={value.primary_cta_label} secondaryLabel={value.secondary_cta_label}/>
+</div></section>

@@ -1,0 +1,457 @@
+{
+	"home": [
+		{
+			"_type": "marketing_hero",
+			"_version": 1,
+			"_key": "hero",
+			"anchor_id": "hero",
+			"headline_lead": "AI that organizes",
+			"headline": "your day for you.",
+			"subheadline": "Appdrop combines tasks, reminders, and calendar planning into one intelligent productivity system.",
+			"centered": true,
+			"rating": "4.8",
+			"rating_label": "500K+ Downloads",
+			"avatars": [
+				{
+					"image": {
+						"id": "",
+						"src": "/appdrop/DATSHOT0d2RaJelozUKzvWKmw.png",
+						"alt": ""
+					}
+				},
+				{
+					"image": {
+						"id": "",
+						"src": "/appdrop/2es1ShpTs7MMoyQoJefdpu8UT8.png",
+						"alt": ""
+					}
+				},
+				{
+					"image": {
+						"id": "",
+						"src": "/appdrop/Drj0szuJRR3HApftd9Jo63X98.png",
+						"alt": ""
+					}
+				},
+				{
+					"image": {
+						"id": "",
+						"src": "/appdrop/2K4vmov6lwbS3BDclUkUD6N7q8.png",
+						"alt": ""
+					}
+				},
+				{
+					"image": {
+						"id": "",
+						"src": "/appdrop/2dkFETvrkoMaOAELnDr2Mz0RYM.png",
+						"alt": ""
+					}
+				}
+			],
+			"image": {
+				"id": "",
+				"src": "/appdrop/ZAGmE9Elu4B1Thfoz84pJUOo.png",
+				"alt": "AppDrop dark task overview"
+			},
+			"secondary_image": {
+				"id": "",
+				"src": "/appdrop/ROIk4ZUDVQvbkfcxPMbVYDKtTV0.png",
+				"alt": "AppDrop daily analysis"
+			},
+			"primary_cta_label": "App Store",
+			"primary_cta_url": "https://framer.link/poOzPgO",
+			"secondary_cta_label": "Google Play",
+			"secondary_cta_url": "https://framer.link/poOzPgO"
+		},
+		{
+			"_type": "marketing_statement",
+			"_version": 1,
+			"_key": "challenge",
+			"anchor_id": "challenge",
+			"eyebrow": "The Challenge",
+			"headline_lead": "Managing tasks, reminders, and meetings across different apps slows you down. ",
+			"headline": "Appdrop brings everything into one intelligent workflow."
+		},
+		{
+			"_type": "marketing_benefits",
+			"_version": 1,
+			"_key": "benefits",
+			"anchor_id": "benefits",
+			"eyebrow": "Key Benefits",
+			"headline_lead": "Smarter ",
+			"headline": "Task Management",
+			"cards": [
+				{
+					"title": "AI-Powered Prioritization",
+					"description": "Automatically surfaces what matters most based on deadlines and patterns.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/ZAGmE9Elu4B1Thfoz84pJUOo.png",
+						"alt": "AI-Powered Prioritization"
+					}
+				},
+				{
+					"title": "Unified Calendar",
+					"description": "Tasks and events live together in one clean timeline.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/ZswnfNDOfSLw0IUo2wdNg2Raosk.png",
+						"alt": "Unified Calendar"
+					}
+				},
+				{
+					"title": "Smart Reminders",
+					"description": "Reminders adjust intelligently to your schedule and behavior.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/EbNCjy888IKCxKUAIOvVa5Zkw6w.png",
+						"alt": "Smart Reminders"
+					}
+				}
+			]
+		},
+		{
+			"_type": "marketing_features",
+			"_version": 1,
+			"_key": "features",
+			"anchor_id": "features",
+			"eyebrow": "Features",
+			"headline_lead": "Built for human thinking. ",
+			"headline": "Automated Intelligently.",
+			"features": [
+				{
+					"title": "Smart Capture",
+					"description": "Turn quick thoughts into structured tasks instantly.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/SdWlGbClE.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				},
+				{
+					"title": "AI Scheduling",
+					"description": "Appdrop suggests the best time to complete tasks.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/Fl_xNyV8v.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				},
+				{
+					"title": "Intelligent Insights",
+					"description": "See productivity trends and improve over time.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/EUVD4YiAJ.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				},
+				{
+					"title": "AI Reminders",
+					"description": "Never miss a deadline. They adapt to your schedule.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/pibvSPAD7.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				},
+				{
+					"title": "Smart Tagging",
+					"description": "Tasks organize themselves automatically with smart tagging.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/DkCncs3O7.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				},
+				{
+					"title": "Smart Views",
+					"description": "Focus on what matters today, this week, or next.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/aUnGnx7_3.svg",
+						"alt": ""
+					},
+					"icon": "star"
+				}
+			],
+			"image": {
+				"id": "",
+				"src": "/appdrop/nctV9TWaHDgryi86HnRAfqdLjA.png",
+				"alt": "AppDrop smart capture screen"
+			}
+		},
+		{
+			"_type": "marketing_intelligence",
+			"_version": 1,
+			"_key": "intelligence",
+			"anchor_id": "intelligence",
+			"eyebrow": "Intelligence Powered",
+			"headline_lead": "Hyper-automation ",
+			"headline": "for human focus.",
+			"cards": [
+				{
+					"title": "Predictive Scheduling",
+					"description": "Appdrop suggests when to complete tasks based on availability.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/qBDQaEC7ZiYkRslEy23Ql43xy2w.png",
+						"alt": "Predictive Scheduling"
+					}
+				},
+				{
+					"title": "Context-Aware Reminders",
+					"description": "Reminders adjust if you miss or reschedule something.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/bCtfTzZCNNfb3eRANnHg5tGuoSI.png",
+						"alt": "Context-Aware Reminders"
+					}
+				},
+				{
+					"title": "On-Device AI",
+					"description": "Fast, private intelligence that works in real time on your device.",
+					"image": {
+						"id": "",
+						"src": "/appdrop/r76yIERbsbVOIfCA8Rj9RA6Y4.png",
+						"alt": "On-Device AI"
+					}
+				}
+			]
+		},
+		{
+			"_type": "marketing_integrations",
+			"_version": 1,
+			"_key": "connect",
+			"anchor_id": "connect",
+			"eyebrow": "Connect",
+			"headline_lead": "Fits perfectly in ",
+			"headline": "your workflow.",
+			"subheadline": "Integrate easily with the tools you already use. Your productivity system, without switching apps.",
+			"integrations": [
+				{
+					"name": "Notion",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/oYal1riITHBEnxr0JRFcjzLxX0.png",
+						"alt": "Notion"
+					}
+				},
+				{
+					"name": "OpenAI",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/pFQat08e9brmq0Jo21xMeMweMsw.png",
+						"alt": "OpenAI"
+					}
+				},
+				{
+					"name": "Apple Notes",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/iWfgo61SbdF5aEsJdDOnoSHjMBc.png",
+						"alt": "Apple Notes"
+					}
+				},
+				{
+					"name": "Grammarly",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/A3gKGZnpf55sJrqV2YAAkSHBA.png",
+						"alt": "Grammarly"
+					}
+				},
+				{
+					"name": "Google Calendar",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/jjqexNcMLN6AF4Cc71TDBJKelo.png",
+						"alt": "Google Calendar"
+					}
+				},
+				{
+					"name": "Instagram",
+					"logo": {
+						"id": "",
+						"src": "/appdrop/SZwnKCduqk2ELHEp1lC2FBfEU.png",
+						"alt": "Instagram"
+					}
+				}
+			]
+		},
+		{
+			"_type": "marketing_testimonials",
+			"_version": 1,
+			"_key": "reviews",
+			"anchor_id": "reviews",
+			"eyebrow": "Hear from the people",
+			"headline_lead": "Trusted by ",
+			"headline": "focused professionals.",
+			"testimonials": [
+				{
+					"quote": "Appdrop replaced three apps in my workflow.\nIt’s simple, smart, and actually helps me stay ahead.",
+					"author": "Sarah Jenkins",
+					"role": "Creative Director",
+					"avatar": {
+						"id": "",
+						"src": "/appdrop/yuzcgFgmRyZXNMlzzJANugjqURk.png",
+						"alt": "Sarah Jenkins"
+					}
+				},
+				{
+					"quote": "The 'AI Reminder' system is genius. It cut my planning time in half and keeps me focused on what matters.",
+					"author": "Marcus Liao",
+					"role": "Software Engineer",
+					"avatar": {
+						"id": "",
+						"src": "/appdrop/lVj7mmViGXD9BWOMrVdjky6XYw.webp",
+						"alt": "Marcus Liao"
+					}
+				},
+				{
+					"quote": "Finally, a productivity app that doesn't feel like another job. Simple, elegant, and powerful. Love it!",
+					"author": "Elena Rodriguez",
+					"role": "Student",
+					"avatar": {
+						"id": "",
+						"src": "/appdrop/QEghJRqvFhxm8btHGMGbVIcabg.png",
+						"alt": "Elena Rodriguez"
+					}
+				},
+				{
+					"quote": "The interface is stunningly minimal. It feels like an extension of my mental space rather than a cluttered tool.",
+					"author": "James Wilson",
+					"role": "Product Designer",
+					"avatar": {
+						"id": "",
+						"src": "/appdrop/AtBxWDp8wlufX7wPQd9XYqwGHI.png",
+						"alt": "James Wilson"
+					}
+				}
+			]
+		},
+		{
+			"_type": "marketing_pricing",
+			"_version": 1,
+			"_key": "pricing",
+			"anchor_id": "pricing",
+			"plans": [
+				{
+					"name": "Free Plan",
+					"price": "$0",
+					"yearly_price": "$0",
+					"period": "/month",
+					"features": "Limited AI Analysis\nUnlimited Tasks\nLimited Reminders\nCloud Sync",
+					"cta_label": "Start for Free",
+					"cta_url": "/#download",
+					"highlighted": false
+				},
+				{
+					"name": "Pro Plan",
+					"price": "$20",
+					"yearly_price": "$16",
+					"period": "/month",
+					"features": "Advanced AI Analysis\nUnlimited Reminders\nSmart Scheduling\nShare with Team",
+					"cta_label": "Start with Pro",
+					"cta_url": "/#download",
+					"highlighted": true
+				}
+			],
+			"image": {
+				"id": "",
+				"src": "/appdrop/tqqaymrX5zjGQ6nIyrWDOKkclDM.png",
+				"alt": "AppDrop task list"
+			},
+			"yearly_label": "Save 20% on yearly plan"
+		},
+		{
+			"_type": "marketing_faq",
+			"_version": 1,
+			"_key": "faqs",
+			"anchor_id": "faqs",
+			"eyebrow": "FAQs",
+			"headline_lead": "Got questions? \n",
+			"headline": "Here are the answers.",
+			"items": [
+				{
+					"question": "Can I connect my Google calendar?",
+					"answer": "Yes. You can connect Google Calendar from settings screen under connect tab."
+				},
+				{
+					"question": "How accurate is the AI summary?",
+					"answer": "We use the latest LLM technologies specifically. It analyze nuance and technical details with over 98% user satisfaction."
+				},
+				{
+					"question": "Does AppDrop work offline?",
+					"answer": "Yes. Your data is stored locally and syncs to the cloud as soon as you're back online."
+				},
+				{
+					"question": "What are free plan limitations?",
+					"answer": "Free plan gives generous limits. If you need Advanced AI Analysis Consider subscribing to Pro plan."
+				},
+				{
+					"question": "Can I use AppDrop with my team?",
+					"answer": "Absolutely. Shared Workspaces in the Pro plan allow for team collaboration."
+				}
+			],
+			"support_text": "If you can't find the answer or need help, email us at",
+			"support_email": "help@apprdrop.com"
+		},
+		{
+			"_type": "marketing_download",
+			"_version": 1,
+			"_key": "download",
+			"anchor_id": "download",
+			"eyebrow": "4 Easy steps to get started",
+			"headline_lead": "Let AI organize your day.",
+			"headline": "\nDownload AppDrop today.",
+			"steps": [
+				{
+					"title": "Download",
+					"description": "Get our app from App Store or Google play.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/TgI_qeQdM.svg",
+						"alt": ""
+					}
+				},
+				{
+					"title": "Create Your Workspace",
+					"description": "Set up tasks and reminders in minutes.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/VQR686Ku0.svg",
+						"alt": ""
+					}
+				},
+				{
+					"title": "Connect Your Calendar",
+					"description": "Bring meetings and deadlines together.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/q0m6CVaoH.svg",
+						"alt": ""
+					}
+				},
+				{
+					"title": "Let AI Handle the Rest",
+					"description": "Stay organized automatically.",
+					"icon_image": {
+						"id": "",
+						"src": "/appdrop/tDib5KVrX.svg",
+						"alt": ""
+					}
+				}
+			],
+			"primary_cta_label": "App Store",
+			"primary_cta_url": "https://framer.link/poOzPgO",
+			"secondary_cta_label": "Google Play",
+			"secondary_cta_url": "https://framer.link/poOzPgO"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+---
+import { sanitizeHref } from "emdash";
+interface Props { links: { label: string; url: string; target?: string | null }[]; }
+const { links } = Astro.props;
+---
+<header class="ad-header">
+	<nav class="ad-nav" aria-label="Main navigation" data-navigation>
+		<div class="ad-nav-top">
+			<a href="/#hero" class="ad-logo" aria-label="AppDrop home"><img src="/appdrop/o7nBenf5iYP2umLrTl50Y4Fiek.png" width="36" height="36" alt="" /><span>AppDrop</span></a>
+			<button class="ad-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="appdrop-navigation"><span></span><span></span></button>
+		</div>
+		<div class="ad-nav-links" id="appdrop-navigation">
+			{links.map(link => <a href={sanitizeHref(link.url)}>{link.label}</a>)}
+		</div>
+		<a href="/#download" class="ad-button ad-nav-cta">Get the app</a>
+	</nav>
+</header>
+<script>
+	const navigation = document.querySelector<HTMLElement>("[data-navigation]");
+	const toggle = navigation?.querySelector<HTMLButtonElement>(".ad-menu-toggle");
+	function closeNavigation() {
+		navigation?.classList.remove("is-open");
+		toggle?.setAttribute("aria-expanded", "false");
+		toggle?.setAttribute("aria-label", "Open navigation");
+	}
+	toggle?.addEventListener("click", () => {
+		const open = navigation?.classList.toggle("is-open") ?? false;
+		toggle.setAttribute("aria-expanded", String(open));
+		toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+	});
+	navigation?.querySelectorAll("a").forEach(link => link.addEventListener("click", closeNavigation));
+	document.addEventListener("keydown", event => {
+		if (event.key === "Escape" && navigation?.classList.contains("is-open")) {
+			closeNavigation();
+			toggle?.focus();
+		}
+	});
+	matchMedia("(min-width: 810px)").addEventListener("change", closeNavigation);
+</script>

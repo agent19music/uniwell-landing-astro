@@ -1,0 +1,1515 @@
+{
+	"$schema": "https://emdashcms.com/seed.schema.json",
+	"version": "1",
+	"meta": {
+		"name": "AppDrop",
+		"description": "AppDrop Framer reference port",
+		"author": "EmDash"
+	},
+	"settings": {
+		"title": "AppDrop",
+		"tagline": "Appdrop combines tasks, reminders, and calendar planning into one intelligent productivity system."
+	},
+	"blockTypes": [
+		{
+			"slug": "marketing_hero",
+			"label": "Hero",
+			"description": "A prominent page introduction with optional calls to action and media",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
+						{
+							"slug": "primary_cta_label",
+							"label": "Primary CTA label",
+							"type": "string"
+						},
+						{
+							"slug": "primary_cta_url",
+							"label": "Primary CTA URL",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
+						},
+						{
+							"slug": "secondary_cta_label",
+							"label": "Secondary CTA label",
+							"type": "string"
+						},
+						{
+							"slug": "secondary_cta_url",
+							"label": "Secondary CTA URL",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
+						},
+						{
+							"slug": "image",
+							"label": "Image",
+							"type": "image"
+						},
+						{
+							"slug": "centered",
+							"label": "Center the layout",
+							"type": "boolean",
+							"defaultValue": true
+						},
+						{
+							"slug": "secondary_image",
+							"label": "Second device screen",
+							"type": "image"
+						},
+						{
+							"slug": "rating",
+							"label": "Rating",
+							"type": "string"
+						},
+						{
+							"slug": "rating_label",
+							"label": "Rating label",
+							"type": "string"
+						},
+						{
+							"slug": "avatars",
+							"label": "Rating portraits",
+							"type": "repeater",
+							"validation": {
+								"maxItems": 5,
+								"subFields": [
+									{
+										"slug": "image",
+										"label": "Portrait",
+										"type": "image"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_statement",
+			"label": "Challenge / Statement",
+			"description": "A concise editorial statement with optional supporting media",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Eyebrow",
+							"type": "string"
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "body",
+							"label": "Body",
+							"type": "text"
+						},
+						{
+							"slug": "image",
+							"label": "Image",
+							"type": "image"
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_integrations",
+			"label": "Integrations",
+			"description": "A restrained row of connected tools or partners",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Eyebrow",
+							"type": "string"
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
+						{
+							"slug": "integrations",
+							"label": "Integrations",
+							"type": "repeater",
+							"validation": {
+								"maxItems": 12,
+								"subFields": [
+									{
+										"slug": "name",
+										"label": "Name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "url",
+										"label": "URL",
+										"type": "string",
+										"validation": {
+											"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+										}
+									},
+									{
+										"slug": "logo",
+										"label": "Logo",
+										"type": "image"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_download",
+			"label": "Getting Started / Download",
+			"description": "A short getting-started sequence and optional app links",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Eyebrow",
+							"type": "string"
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
+						{
+							"slug": "steps",
+							"label": "Steps",
+							"type": "repeater",
+							"validation": {
+								"minItems": 1,
+								"maxItems": 6,
+								"subFields": [
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "description",
+										"label": "Description",
+										"type": "text"
+									},
+									{
+										"slug": "icon_image",
+										"label": "Icon artwork",
+										"type": "image"
+									}
+								]
+							}
+						},
+						{
+							"slug": "primary_cta_label",
+							"label": "Primary CTA label",
+							"type": "string"
+						},
+						{
+							"slug": "primary_cta_url",
+							"label": "Primary CTA URL",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
+						},
+						{
+							"slug": "secondary_cta_label",
+							"label": "Secondary CTA label",
+							"type": "string"
+						},
+						{
+							"slug": "secondary_cta_url",
+							"label": "Secondary CTA URL",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_features",
+			"label": "Features",
+			"description": "A grid of product or service features",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
+						{
+							"slug": "features",
+							"label": "Features",
+							"type": "repeater",
+							"required": true,
+							"validation": {
+								"minItems": 1,
+								"maxItems": 12,
+								"subFields": [
+									{
+										"slug": "icon",
+										"label": "Icon",
+										"type": "select",
+										"required": true,
+										"options": [
+											"zap",
+											"shield",
+											"users",
+											"chart",
+											"code",
+											"globe",
+											"heart",
+											"star",
+											"check",
+											"lock",
+											"clock",
+											"cloud"
+										]
+									},
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "description",
+										"label": "Description",
+										"type": "text",
+										"required": true
+									},
+									{
+										"slug": "icon_image",
+										"label": "Icon artwork",
+										"type": "image"
+									}
+								]
+							}
+						},
+						{
+							"slug": "image",
+							"label": "Device screen",
+							"type": "image"
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_testimonials",
+			"label": "Testimonials",
+			"description": "Customer quotes and attribution",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "testimonials",
+							"label": "Testimonials",
+							"type": "repeater",
+							"required": true,
+							"validation": {
+								"minItems": 1,
+								"maxItems": 12,
+								"subFields": [
+									{
+										"slug": "quote",
+										"label": "Quote",
+										"type": "text",
+										"required": true
+									},
+									{
+										"slug": "author",
+										"label": "Author name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "role",
+										"label": "Role or title",
+										"type": "string"
+									},
+									{
+										"slug": "company",
+										"label": "Company",
+										"type": "string"
+									},
+									{
+										"slug": "avatar",
+										"label": "Avatar",
+										"type": "image"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_pricing",
+			"label": "Pricing",
+			"description": "A comparison of up to three pricing plans",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "plans",
+							"label": "Plans",
+							"type": "repeater",
+							"required": true,
+							"validation": {
+								"minItems": 1,
+								"maxItems": 3,
+								"subFields": [
+									{
+										"slug": "name",
+										"label": "Plan name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "price",
+										"label": "Price",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "period",
+										"label": "Period",
+										"type": "string"
+									},
+									{
+										"slug": "description",
+										"label": "Description",
+										"type": "text"
+									},
+									{
+										"slug": "features",
+										"label": "Features, one per line",
+										"type": "text"
+									},
+									{
+										"slug": "cta_label",
+										"label": "CTA label",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "cta_url",
+										"label": "CTA URL",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "highlighted",
+										"label": "Highlight this plan",
+										"type": "boolean"
+									},
+									{
+										"slug": "yearly_price",
+										"label": "Yearly price",
+										"type": "string"
+									}
+								]
+							}
+						},
+						{
+							"slug": "image",
+							"label": "Device screen",
+							"type": "image"
+						},
+						{
+							"slug": "yearly_label",
+							"label": "Yearly saving label",
+							"type": "string"
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_faq",
+			"label": "FAQ",
+			"description": "A list of frequently asked questions",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string",
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "items",
+							"label": "Questions",
+							"type": "repeater",
+							"required": true,
+							"validation": {
+								"minItems": 1,
+								"maxItems": 12,
+								"subFields": [
+									{
+										"slug": "question",
+										"label": "Question",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "answer",
+										"label": "Answer",
+										"type": "text",
+										"required": true
+									}
+								]
+							}
+						},
+						{
+							"slug": "support_text",
+							"label": "Support text",
+							"type": "text"
+						},
+						{
+							"slug": "support_email",
+							"label": "Support email",
+							"type": "string"
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_benefits",
+			"label": "Benefits",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "text"
+						},
+						{
+							"slug": "cards",
+							"label": "Cards",
+							"type": "repeater",
+							"validation": {
+								"maxItems": 3,
+								"subFields": [
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "description",
+										"label": "Description",
+										"type": "text"
+									},
+									{
+										"slug": "image",
+										"label": "Artwork",
+										"type": "image"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"slug": "marketing_intelligence",
+			"label": "Intelligence",
+			"category": "Marketing",
+			"currentVersion": 1,
+			"versions": [
+				{
+					"version": 1,
+					"fields": [
+						{
+							"slug": "anchor_id",
+							"label": "Anchor ID",
+							"type": "string"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Section label",
+							"type": "string"
+						},
+						{
+							"slug": "headline_lead",
+							"label": "Muted headline text",
+							"type": "text"
+						},
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "text"
+						},
+						{
+							"slug": "cards",
+							"label": "Cards",
+							"type": "repeater",
+							"validation": {
+								"maxItems": 3,
+								"subFields": [
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "description",
+										"label": "Description",
+										"type": "text"
+									},
+									{
+										"slug": "image",
+										"label": "Artwork",
+										"type": "image"
+									}
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"collections": [
+		{
+			"slug": "pages",
+			"label": "Pages",
+			"labelSingular": "Page",
+			"supports": [
+				"drafts",
+				"revisions",
+				"seo"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true
+				},
+				{
+					"slug": "content",
+					"label": "Content",
+					"type": "blocks",
+					"validation": {
+						"allowedTypes": [
+							"marketing_hero",
+							"marketing_statement",
+							"marketing_integrations",
+							"marketing_download",
+							"marketing_features",
+							"marketing_testimonials",
+							"marketing_pricing",
+							"marketing_faq",
+							"marketing_benefits",
+							"marketing_intelligence"
+						],
+						"maxItems": 20
+					}
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"name": "primary",
+			"label": "Primary Navigation",
+			"items": [
+				{
+					"type": "custom",
+					"label": "Benefits",
+					"url": "/#benefits"
+				},
+				{
+					"type": "custom",
+					"label": "Features",
+					"url": "/#features"
+				},
+				{
+					"type": "custom",
+					"label": "Reviews",
+					"url": "/#reviews"
+				},
+				{
+					"type": "custom",
+					"label": "Pricing",
+					"url": "/#pricing"
+				},
+				{
+					"type": "custom",
+					"label": "FAQs",
+					"url": "/#faqs"
+				}
+			]
+		},
+		{
+			"name": "footer_product",
+			"label": "Footer: Product",
+			"items": [
+				{
+					"type": "custom",
+					"label": "Benefits",
+					"url": "/#benefits"
+				},
+				{
+					"type": "custom",
+					"label": "Features",
+					"url": "/#features"
+				},
+				{
+					"type": "custom",
+					"label": "Pricing",
+					"url": "/#pricing"
+				},
+				{
+					"type": "custom",
+					"label": "Download",
+					"url": "/#download"
+				}
+			]
+		},
+		{
+			"name": "footer_company",
+			"label": "Footer: More",
+			"items": [
+				{
+					"type": "custom",
+					"label": "Integration",
+					"url": "/#connect"
+				},
+				{
+					"type": "custom",
+					"label": "Questions",
+					"url": "/#faqs"
+				},
+				{
+					"type": "custom",
+					"label": "Reviews",
+					"url": "/#reviews"
+				},
+				{
+					"type": "custom",
+					"label": "Support",
+					"url": "mailto:help@appdrop.com"
+				}
+			]
+		},
+		{
+			"name": "footer_support",
+			"label": "Footer: Support",
+			"items": []
+		}
+	],
+	"content": {
+		"pages": [
+			{
+				"id": "home",
+				"slug": "home",
+				"status": "published",
+				"data": {
+					"title": "Home",
+					"content": [
+						{
+							"_type": "marketing_hero",
+							"_version": 1,
+							"_key": "hero",
+							"anchor_id": "hero",
+							"headline_lead": "AI that organizes",
+							"headline": "your day for you.",
+							"subheadline": "Appdrop combines tasks, reminders, and calendar planning into one intelligent productivity system.",
+							"centered": true,
+							"rating": "4.8",
+							"rating_label": "500K+ Downloads",
+							"avatars": [
+								{
+									"image": {
+										"id": "",
+										"src": "/appdrop/DATSHOT0d2RaJelozUKzvWKmw.png",
+										"alt": ""
+									}
+								},
+								{
+									"image": {
+										"id": "",
+										"src": "/appdrop/2es1ShpTs7MMoyQoJefdpu8UT8.png",
+										"alt": ""
+									}
+								},
+								{
+									"image": {
+										"id": "",
+										"src": "/appdrop/Drj0szuJRR3HApftd9Jo63X98.png",
+										"alt": ""
+									}
+								},
+								{
+									"image": {
+										"id": "",
+										"src": "/appdrop/2K4vmov6lwbS3BDclUkUD6N7q8.png",
+										"alt": ""
+									}
+								},
+								{
+									"image": {
+										"id": "",
+										"src": "/appdrop/2dkFETvrkoMaOAELnDr2Mz0RYM.png",
+										"alt": ""
+									}
+								}
+							],
+							"image": {
+								"id": "",
+								"src": "/appdrop/ZAGmE9Elu4B1Thfoz84pJUOo.png",
+								"alt": "AppDrop dark task overview"
+							},
+							"secondary_image": {
+								"id": "",
+								"src": "/appdrop/ROIk4ZUDVQvbkfcxPMbVYDKtTV0.png",
+								"alt": "AppDrop daily analysis"
+							},
+							"primary_cta_label": "App Store",
+							"primary_cta_url": "https://framer.link/poOzPgO",
+							"secondary_cta_label": "Google Play",
+							"secondary_cta_url": "https://framer.link/poOzPgO"
+						},
+						{
+							"_type": "marketing_statement",
+							"_version": 1,
+							"_key": "challenge",
+							"anchor_id": "challenge",
+							"eyebrow": "The Challenge",
+							"headline_lead": "Managing tasks, reminders, and meetings across different apps slows you down. ",
+							"headline": "Appdrop brings everything into one intelligent workflow."
+						},
+						{
+							"_type": "marketing_benefits",
+							"_version": 1,
+							"_key": "benefits",
+							"anchor_id": "benefits",
+							"eyebrow": "Key Benefits",
+							"headline_lead": "Smarter ",
+							"headline": "Task Management",
+							"cards": [
+								{
+									"title": "AI-Powered Prioritization",
+									"description": "Automatically surfaces what matters most based on deadlines and patterns.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/ZAGmE9Elu4B1Thfoz84pJUOo.png",
+										"alt": "AI-Powered Prioritization"
+									}
+								},
+								{
+									"title": "Unified Calendar",
+									"description": "Tasks and events live together in one clean timeline.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/ZswnfNDOfSLw0IUo2wdNg2Raosk.png",
+										"alt": "Unified Calendar"
+									}
+								},
+								{
+									"title": "Smart Reminders",
+									"description": "Reminders adjust intelligently to your schedule and behavior.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/EbNCjy888IKCxKUAIOvVa5Zkw6w.png",
+										"alt": "Smart Reminders"
+									}
+								}
+							]
+						},
+						{
+							"_type": "marketing_features",
+							"_version": 1,
+							"_key": "features",
+							"anchor_id": "features",
+							"eyebrow": "Features",
+							"headline_lead": "Built for human thinking. ",
+							"headline": "Automated Intelligently.",
+							"features": [
+								{
+									"title": "Smart Capture",
+									"description": "Turn quick thoughts into structured tasks instantly.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/SdWlGbClE.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								},
+								{
+									"title": "AI Scheduling",
+									"description": "Appdrop suggests the best time to complete tasks.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/Fl_xNyV8v.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								},
+								{
+									"title": "Intelligent Insights",
+									"description": "See productivity trends and improve over time.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/EUVD4YiAJ.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								},
+								{
+									"title": "AI Reminders",
+									"description": "Never miss a deadline. They adapt to your schedule.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/pibvSPAD7.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								},
+								{
+									"title": "Smart Tagging",
+									"description": "Tasks organize themselves automatically with smart tagging.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/DkCncs3O7.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								},
+								{
+									"title": "Smart Views",
+									"description": "Focus on what matters today, this week, or next.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/aUnGnx7_3.svg",
+										"alt": ""
+									},
+									"icon": "star"
+								}
+							],
+							"image": {
+								"id": "",
+								"src": "/appdrop/nctV9TWaHDgryi86HnRAfqdLjA.png",
+								"alt": "AppDrop smart capture screen"
+							}
+						},
+						{
+							"_type": "marketing_intelligence",
+							"_version": 1,
+							"_key": "intelligence",
+							"anchor_id": "intelligence",
+							"eyebrow": "Intelligence Powered",
+							"headline_lead": "Hyper-automation ",
+							"headline": "for human focus.",
+							"cards": [
+								{
+									"title": "Predictive Scheduling",
+									"description": "Appdrop suggests when to complete tasks based on availability.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/qBDQaEC7ZiYkRslEy23Ql43xy2w.png",
+										"alt": "Predictive Scheduling"
+									}
+								},
+								{
+									"title": "Context-Aware Reminders",
+									"description": "Reminders adjust if you miss or reschedule something.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/bCtfTzZCNNfb3eRANnHg5tGuoSI.png",
+										"alt": "Context-Aware Reminders"
+									}
+								},
+								{
+									"title": "On-Device AI",
+									"description": "Fast, private intelligence that works in real time on your device.",
+									"image": {
+										"id": "",
+										"src": "/appdrop/r76yIERbsbVOIfCA8Rj9RA6Y4.png",
+										"alt": "On-Device AI"
+									}
+								}
+							]
+						},
+						{
+							"_type": "marketing_integrations",
+							"_version": 1,
+							"_key": "connect",
+							"anchor_id": "connect",
+							"eyebrow": "Connect",
+							"headline_lead": "Fits perfectly in ",
+							"headline": "your workflow.",
+							"subheadline": "Integrate easily with the tools you already use. Your productivity system, without switching apps.",
+							"integrations": [
+								{
+									"name": "Notion",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/oYal1riITHBEnxr0JRFcjzLxX0.png",
+										"alt": "Notion"
+									}
+								},
+								{
+									"name": "OpenAI",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/pFQat08e9brmq0Jo21xMeMweMsw.png",
+										"alt": "OpenAI"
+									}
+								},
+								{
+									"name": "Apple Notes",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/iWfgo61SbdF5aEsJdDOnoSHjMBc.png",
+										"alt": "Apple Notes"
+									}
+								},
+								{
+									"name": "Grammarly",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/A3gKGZnpf55sJrqV2YAAkSHBA.png",
+										"alt": "Grammarly"
+									}
+								},
+								{
+									"name": "Google Calendar",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/jjqexNcMLN6AF4Cc71TDBJKelo.png",
+										"alt": "Google Calendar"
+									}
+								},
+								{
+									"name": "Instagram",
+									"logo": {
+										"id": "",
+										"src": "/appdrop/SZwnKCduqk2ELHEp1lC2FBfEU.png",
+										"alt": "Instagram"
+									}
+								}
+							]
+						},
+						{
+							"_type": "marketing_testimonials",
+							"_version": 1,
+							"_key": "reviews",
+							"anchor_id": "reviews",
+							"eyebrow": "Hear from the people",
+							"headline_lead": "Trusted by ",
+							"headline": "focused professionals.",
+							"testimonials": [
+								{
+									"quote": "Appdrop replaced three apps in my workflow.\nIt’s simple, smart, and actually helps me stay ahead.",
+									"author": "Sarah Jenkins",
+									"role": "Creative Director",
+									"avatar": {
+										"id": "",
+										"src": "/appdrop/yuzcgFgmRyZXNMlzzJANugjqURk.png",
+										"alt": "Sarah Jenkins"
+									}
+								},
+								{
+									"quote": "The 'AI Reminder' system is genius. It cut my planning time in half and keeps me focused on what matters.",
+									"author": "Marcus Liao",
+									"role": "Software Engineer",
+									"avatar": {
+										"id": "",
+										"src": "/appdrop/lVj7mmViGXD9BWOMrVdjky6XYw.webp",
+										"alt": "Marcus Liao"
+									}
+								},
+								{
+									"quote": "Finally, a productivity app that doesn't feel like another job. Simple, elegant, and powerful. Love it!",
+									"author": "Elena Rodriguez",
+									"role": "Student",
+									"avatar": {
+										"id": "",
+										"src": "/appdrop/QEghJRqvFhxm8btHGMGbVIcabg.png",
+										"alt": "Elena Rodriguez"
+									}
+								},
+								{
+									"quote": "The interface is stunningly minimal. It feels like an extension of my mental space rather than a cluttered tool.",
+									"author": "James Wilson",
+									"role": "Product Designer",
+									"avatar": {
+										"id": "",
+										"src": "/appdrop/AtBxWDp8wlufX7wPQd9XYqwGHI.png",
+										"alt": "James Wilson"
+									}
+								}
+							]
+						},
+						{
+							"_type": "marketing_pricing",
+							"_version": 1,
+							"_key": "pricing",
+							"anchor_id": "pricing",
+							"plans": [
+								{
+									"name": "Free Plan",
+									"price": "$0",
+									"yearly_price": "$0",
+									"period": "/month",
+									"features": "Limited AI Analysis\nUnlimited Tasks\nLimited Reminders\nCloud Sync",
+									"cta_label": "Start for Free",
+									"cta_url": "/#download",
+									"highlighted": false
+								},
+								{
+									"name": "Pro Plan",
+									"price": "$20",
+									"yearly_price": "$16",
+									"period": "/month",
+									"features": "Advanced AI Analysis\nUnlimited Reminders\nSmart Scheduling\nShare with Team",
+									"cta_label": "Start with Pro",
+									"cta_url": "/#download",
+									"highlighted": true
+								}
+							],
+							"image": {
+								"id": "",
+								"src": "/appdrop/tqqaymrX5zjGQ6nIyrWDOKkclDM.png",
+								"alt": "AppDrop task list"
+							},
+							"yearly_label": "Save 20% on yearly plan"
+						},
+						{
+							"_type": "marketing_faq",
+							"_version": 1,
+							"_key": "faqs",
+							"anchor_id": "faqs",
+							"eyebrow": "FAQs",
+							"headline_lead": "Got questions? \n",
+							"headline": "Here are the answers.",
+							"items": [
+								{
+									"question": "Can I connect my Google calendar?",
+									"answer": "Yes. You can connect Google Calendar from settings screen under connect tab."
+								},
+								{
+									"question": "How accurate is the AI summary?",
+									"answer": "We use the latest LLM technologies specifically. It analyze nuance and technical details with over 98% user satisfaction."
+								},
+								{
+									"question": "Does AppDrop work offline?",
+									"answer": "Yes. Your data is stored locally and syncs to the cloud as soon as you're back online."
+								},
+								{
+									"question": "What are free plan limitations?",
+									"answer": "Free plan gives generous limits. If you need Advanced AI Analysis Consider subscribing to Pro plan."
+								},
+								{
+									"question": "Can I use AppDrop with my team?",
+									"answer": "Absolutely. Shared Workspaces in the Pro plan allow for team collaboration."
+								}
+							],
+							"support_text": "If you can't find the answer or need help, email us at",
+							"support_email": "help@apprdrop.com"
+						},
+						{
+							"_type": "marketing_download",
+							"_version": 1,
+							"_key": "download",
+							"anchor_id": "download",
+							"eyebrow": "4 Easy steps to get started",
+							"headline_lead": "Let AI organize your day.",
+							"headline": "\nDownload AppDrop today.",
+							"steps": [
+								{
+									"title": "Download",
+									"description": "Get our app from App Store or Google play.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/TgI_qeQdM.svg",
+										"alt": ""
+									}
+								},
+								{
+									"title": "Create Your Workspace",
+									"description": "Set up tasks and reminders in minutes.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/VQR686Ku0.svg",
+										"alt": ""
+									}
+								},
+								{
+									"title": "Connect Your Calendar",
+									"description": "Bring meetings and deadlines together.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/q0m6CVaoH.svg",
+										"alt": ""
+									}
+								},
+								{
+									"title": "Let AI Handle the Rest",
+									"description": "Stay organized automatically.",
+									"icon_image": {
+										"id": "",
+										"src": "/appdrop/tDib5KVrX.svg",
+										"alt": ""
+									}
+								}
+							],
+							"primary_cta_label": "App Store",
+							"primary_cta_url": "https://framer.link/poOzPgO",
+							"secondary_cta_label": "Google Play",
+							"secondary_cta_url": "https://framer.link/poOzPgO"
+						}
+					]
+				}
+			},
+			{
+				"id": "pricing",
+				"slug": "pricing",
+				"status": "published",
+				"data": {
+					"title": "Pricing",
+					"content": [
+						{
+							"_type": "marketing_hero",
+							"_version": 1,
+							"_key": "pricing-intro",
+							"anchor_id": "pricing-intro",
+							"headline_lead": "Simple pricing.",
+							"headline": "Start for free.",
+							"centered": true
+						},
+						{
+							"_type": "marketing_pricing",
+							"_version": 1,
+							"_key": "pricing",
+							"anchor_id": "pricing",
+							"plans": [
+								{
+									"name": "Free Plan",
+									"price": "$0",
+									"yearly_price": "$0",
+									"period": "/month",
+									"features": "Limited AI Analysis\nUnlimited Tasks\nLimited Reminders\nCloud Sync",
+									"cta_label": "Start for Free",
+									"cta_url": "/#download",
+									"highlighted": false
+								},
+								{
+									"name": "Pro Plan",
+									"price": "$20",
+									"yearly_price": "$16",
+									"period": "/month",
+									"features": "Advanced AI Analysis\nUnlimited Reminders\nSmart Scheduling\nShare with Team",
+									"cta_label": "Start with Pro",
+									"cta_url": "/#download",
+									"highlighted": true
+								}
+							],
+							"image": {
+								"id": "",
+								"src": "/appdrop/tqqaymrX5zjGQ6nIyrWDOKkclDM.png",
+								"alt": "AppDrop task list"
+							},
+							"yearly_label": "Save 20% on yearly plan"
+						},
+						{
+							"_type": "marketing_faq",
+							"_version": 1,
+							"_key": "faqs",
+							"anchor_id": "faqs",
+							"eyebrow": "FAQs",
+							"headline_lead": "Got questions? \n",
+							"headline": "Here are the answers.",
+							"items": [
+								{
+									"question": "Can I connect my Google calendar?",
+									"answer": "Yes. You can connect Google Calendar from settings screen under connect tab."
+								},
+								{
+									"question": "How accurate is the AI summary?",
+									"answer": "We use the latest LLM technologies specifically. It analyze nuance and technical details with over 98% user satisfaction."
+								},
+								{
+									"question": "Does AppDrop work offline?",
+									"answer": "Yes. Your data is stored locally and syncs to the cloud as soon as you're back online."
+								},
+								{
+									"question": "What are free plan limitations?",
+									"answer": "Free plan gives generous limits. If you need Advanced AI Analysis Consider subscribing to Pro plan."
+								},
+								{
+									"question": "Can I use AppDrop with my team?",
+									"answer": "Absolutely. Shared Workspaces in the Pro plan allow for team collaboration."
+								}
+							],
+							"support_text": "If you can't find the answer or need help, email us at",
+							"support_email": "help@apprdrop.com"
+						}
+					]
+				}
+			},
+			{
+				"id": "contact",
+				"slug": "contact",
+				"status": "published",
+				"data": {
+					"title": "Contact",
+					"content": [
+						{
+							"_type": "marketing_hero",
+							"_version": 1,
+							"_key": "contact",
+							"anchor_id": "contact",
+							"headline_lead": "Contact",
+							"headline": "AppDrop",
+							"subheadline": "Questions or support? Email help@appdrop.com.",
+							"centered": true,
+							"primary_cta_label": "Email support",
+							"primary_cta_url": "mailto:help@appdrop.com"
+						}
+					]
+				}
+			}
+		]
+	}
+}

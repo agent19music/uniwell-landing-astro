@@ -1,0 +1,55 @@
+---
+import { getEmDashEntry, getSeoMeta } from "emdash";
+import MarketingBlocks from "../components/MarketingBlocks.astro";
+import Base from "../layouts/Base.astro";
+
+const { entry: page, cacheHint } = await getEmDashEntry("pages", "contact");
+
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+
+const seo = page
+	? getSeoMeta(page, {
+			siteUrl: Astro.url.origin,
+			path: "/contact",
+			defaultDescription: "",
+		})
+	: null;
+
+const pageContent = page?.data.content;
+---
+
+<Base
+	title={seo?.title || "Contact"}
+	pageTitle={page?.data.title || "Contact"}
+	description={seo?.description}
+	image={seo?.ogImage}
+	canonical={seo?.canonical}
+	robots={seo?.robots}
+	content={page ? { collection: "pages", id: page.data.id, slug: page.id } : undefined}
+>
+	{page && pageContent?.length ? (
+		<div class="ad-page" {...page.edit.content}>
+			<MarketingBlocks value={pageContent} />
+		</div>
+	) : (
+		<div class="empty-state">
+			<h1>Contact</h1>
+			<p>Add AppDrop’s contact information and page content in the admin.</p>
+			{Astro.locals.user && <a href="/_emdash/admin" class="btn btn-primary">Open Admin</a>}
+		</div>
+	)}
+</Base>
+
+<style>
+	.empty-state {
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: var(--spacing-5xl) var(--spacing-lg);
+		text-align: center;
+	}
+
+	.empty-state p {
+		margin: var(--spacing-md) 0 var(--spacing-xl);
+		color: var(--color-muted);
+	}
+</style>

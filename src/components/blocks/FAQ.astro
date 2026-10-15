@@ -1,0 +1,13 @@
+---
+import type { BlockComponentProps } from "emdash/ui";
+import { sanitizeHref } from "emdash";
+import type { PageContentBlock } from "../../../emdash-env";
+import SectionHeading from "../appdrop/SectionHeading.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_faq" }>>;
+const { value, blockKey } = Astro.props;
+---
+<section id={value.anchor_id || "faqs"} class="ad-faq"><div class="ad-container ad-faq-container">
+ <SectionHeading eyebrow={value.eyebrow} lead={value.headline_lead} headline={value.headline}/>
+ <div class="ad-faq-list">{value.items.map(item=><details class="ad-faq-item" name={`faq-${blockKey}`} data-reveal><summary><span>{item.question}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary><div class="ad-faq-answer"><p>{item.answer}</p></div></details>)}</div>
+ {(value.support_text || value.support_email) && <p class="ad-faq-support">{value.support_text} {value.support_email && <a href={sanitizeHref(`mailto:${value.support_email}`)}>{value.support_email}</a>}</p>}
+</div></section>

@@ -1,0 +1,25 @@
+---
+import { Image, type BlockComponentProps } from "emdash/ui";
+import type { PageContentBlock } from "../../../emdash-env";
+import { sanitizeHref } from "emdash";
+import Device from "../appdrop/Device.astro";
+import StoreButtons from "../appdrop/StoreButtons.astro";
+type Props = BlockComponentProps<Extract<PageContentBlock, { _type: "marketing_hero" }>>;
+const { value } = Astro.props;
+---
+<section id={value.anchor_id || "hero"} class="ad-hero">
+ <div class="ad-hero-container">
+  <div class="ad-hero-copy">
+   {(value.rating || value.rating_label) && <div class="ad-rating">
+    <div class="ad-avatars">{value.avatars?.map(({ image }) => <Image image={image} class="ad-avatar" alt="" priority />)}</div>
+    <div class="ad-rating-copy"><div class="ad-stars"><span class="ad-rating-stars" aria-label="5 stars">{Array.from({length:5},()=> <img src="/appdrop/rating-star.svg" width="16" height="16" alt=""/>)}</span><strong>{value.rating}</strong></div><p>{value.rating_label}</p></div>
+   </div>}
+   <div class="ad-hero-heading"><h1><span class="ad-muted">{value.headline_lead}</span><span>{value.headline}</span></h1>{value.subheadline && <p>{value.subheadline}</p>}</div>
+   {value.primary_cta_label === "App Store" ? <StoreButtons primaryUrl={value.primary_cta_url} secondaryUrl={value.secondary_cta_url} primaryLabel={value.primary_cta_label} secondaryLabel={value.secondary_cta_label} /> : <div class="ad-store-buttons">{value.primary_cta_url && <a class="ad-button" href={sanitizeHref(value.primary_cta_url)}>{value.primary_cta_label}</a>}{value.secondary_cta_url && <a class="ad-button ad-button-secondary" href={sanitizeHref(value.secondary_cta_url)}>{value.secondary_cta_label}</a>}</div>}
+  </div>
+  {(value.image || value.secondary_image) && <div class="ad-hero-devices">
+   <div class="ad-hero-device ad-hero-device-back" data-device-reveal><Device image={value.image} radius={52} priority /></div>
+   <div class="ad-hero-device ad-hero-device-front" data-device-reveal><Device image={value.secondary_image} priority /></div>
+  </div>}
+ </div>
+</section>

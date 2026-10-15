@@ -1,0 +1,24 @@
+---
+import { sanitizeHref } from "emdash";
+interface Props {
+	primaryUrl?: string | null;
+	secondaryUrl?: string | null;
+	primaryLabel?: string | null;
+	secondaryLabel?: string | null;
+}
+const { primaryUrl, secondaryUrl, primaryLabel = "App Store", secondaryLabel = "Google Play" } = Astro.props;
+---
+<div class="ad-store-buttons">
+	{primaryUrl && (
+		<a class="ad-store-button ad-store-apple" href={sanitizeHref(primaryUrl)} target="_blank" rel="noopener noreferrer">
+			<img src="/appdrop/H9El8Fraj.svg" width="23" height="30" alt="" />
+			<span><small>Get it on</small><span>{primaryLabel}</span></span>
+		</a>
+	)}
+	{secondaryUrl && (
+		<a class="ad-store-button ad-store-google" href={sanitizeHref(secondaryUrl)} target="_blank" rel="noopener noreferrer">
+			<img src="/appdrop/LVhVfrkYQPgkfcMKGP.svg" width="24" height="26" alt="" />
+			<span><small>Get it on</small><span>{secondaryLabel}</span></span>
+		</a>
+	)}
+</div>

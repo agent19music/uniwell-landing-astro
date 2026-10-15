@@ -1,0 +1,15 @@
+---
+import { Image } from "emdash/ui";
+import type { ComponentProps } from "astro/types";
+type ImageValue = Exclude<ComponentProps<typeof Image>["image"], string | null | undefined>;
+interface Props {
+	image?: ImageValue | null;
+	class?: string;
+	radius?: number;
+	priority?: boolean;
+}
+const { image, class: className, radius = 60, priority = false } = Astro.props;
+---
+<div class:list={["ad-device", className]} style={`--screen-radius:${radius}px`}>
+	{image && <Image image={image} class="ad-device-screen" priority={priority} />}
+</div>
